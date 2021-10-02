@@ -6,12 +6,32 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!-- Optional theme -->
+	<style>
+		.header{
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
-	<div class="jumbotron" style="color:black">
+	<div class="header"  style="color:black" >
 	<h3 style ="color:rgb(14, 13, 13)">
 Get The latest news on our website
 	</h3>
+	</div>
+	<div class="container">	
+	<form action="" method="POST">
+		{% csrf_token %}
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Search for the topic you need"/>
+		</div>
+		<div class="form-group">
+			<select name="form-control">
+				<option>The Hindu</option>
+				<option>BBC News</option>
+			</select>
+		</div>
+		<input type="submit" value="Search" class="btn btn-primary" style="float: right;">
+	</form>
 	</div>
 
 
