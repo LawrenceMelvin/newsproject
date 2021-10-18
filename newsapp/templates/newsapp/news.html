@@ -46,6 +46,21 @@ Get The latest news on our website
 
 	{% endfor %}
 	</div>
-
+	<div>
+		<div class="alan-btn"></div>
+		<script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js">
+		</script>
+		<script>
+			var alanBtnInstance = alanBtn({
+				key: "25e89a5dbe4021e657110efe880d8d022e956eca572e1d8b807a3e2338fdd0dc/testing",
+				onCommand: function (commandData) {
+					if (commandData.command === "go:back") {
+						// Call the client code that will react to the received command
+					}
+				},
+				rootEl: document.getElementById("alan-btn"),
+			});
+		</script>
+	</div>
 </body>
 </html>
