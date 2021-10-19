@@ -21,38 +21,36 @@ Get The latest news on our website
 	<div class="container">	
 	<form action="" method="POST">
 		{% csrf_token %}
-		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Search for the topic you need"/>
-		</div>
-		<div class="form-group">
-			<select name="form-control">
-				<option>The Hindu</option>
-				<option>BBC News</option>
-			</select>
-		</div>
-		<input type="submit" value="Search" class="btn btn-primary" style="float: right;">
+		<!-- <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+			<option value="1">The Hindu</option>
+			<option value="2">BCC News</option>
+			<option value="3">The Verge</option>
+		</select> -->
+		{{ forms }}
+		<input type="submit" value="Search" class="btn btn-primary">
 	</form>
 	</div>
 
 
 	<div class="container">
 	{% for new, des, i in mylist %}
-			<img src="{{ i }}" alt="">
-			<h3>news:</h3> {{ new }}
-			{{ value|linebreaks }}
-
-			<h4>description:</h4>{{ des }}
-			{{ value|linebreaks }}
-
+			<div class="card" style="width: 18rem;">
+				<img src="{{ i }}" class="card-img-top" alt="...">
+				<div class="card-body">
+				  <h5 class="card-title">{{ new }}</h5>
+				  <p>Description:</p>
+				  <p class="card-text">{{ des }}</p>
+				</div>
+			</div>
 	{% endfor %}
 	</div>
 	<div>
 		<div class="alan-btn"></div>
 		<script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js">
-		</script>
+		 </script>
 		<script>
 			var alanBtnInstance = alanBtn({
-				key: "25e89a5dbe4021e657110efe880d8d022e956eca572e1d8b807a3e2338fdd0dc/testing",
+				key: "25e89a5dbe4021e657110efe880d8d022e956eca572e1d8b807a3e2338fdd0dc/stage",
 				onCommand: function (commandData) {
 					if (commandData.command === "go:back") {
 						// Call the client code that will react to the received command
